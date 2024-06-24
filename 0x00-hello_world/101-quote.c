@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
+#include <string.h>
 /**
   * main - takes no argument
   * Return: value returned is 1
