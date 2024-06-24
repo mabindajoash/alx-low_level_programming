@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - takes no argument, entry point
+ * main - takes no argument
  * Return: 0 value always
  */
 int main(void)
@@ -19,4 +19,4 @@ int main(void)
 	else
 		printf("%d is positive\n", n);
 	return (0);
-
+}
