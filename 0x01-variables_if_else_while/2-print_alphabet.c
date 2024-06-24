@@ -1,4 +1,4 @@
-#include <stdipo.h>
+#include <stdio.h>
 
 /**
   * main - entry point takes no argument
