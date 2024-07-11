@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <unistd.h>
 /**
   * main - prints putchar followed by a new line
   * Return: 0
