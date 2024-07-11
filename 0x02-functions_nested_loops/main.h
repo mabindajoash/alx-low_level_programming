@@ -1,6 +1,7 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 int _putchar(char c);
+void jack_bauer(void);
 int print_last_digit(int n);
 int _isalpha(int c);
 int print_sign(int n);
