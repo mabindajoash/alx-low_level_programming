@@ -8,27 +8,29 @@
   */
 char *str_concat(char *s1, char *s2)
 {
-	int length1 = 0;
-	int length2 = 0;
+	int lenght1 = 0;
+	int lenght2 = 0;
 	int result;
 	char *string;
 	int i, j;
 
 	if (!s1)
-		s1 = " ";
+		s1 = "";
 	if (!s2)
-		s2 = " ";
+		s2 = "";
 	/* find length of s1 & s2 */
-	while (s1[length1++])
-		length1++;
-	while (s2[length2++])
-		length2++;
-	result = length1 + length2;
+	while (s1[lenght1] != '\0')
+		lenght1++;
+	while (s2[lenght2] != '\0')
+		lenght2++;
+	result = lenght1 + lenght2;
 	string = (char *)malloc(result + 1 * sizeof(char));
-	for (i = 0; s1[i]; i++)
+	if (!string)
+		return ('\0');
+	for (i = 0; i < lenght1; i++)
 		string[i] = s1[i];
-	for (j = 0; s2[j]; i++, j++)
-		string[i] = s2[j];
-	*string = '\0';
+	for (j = 0; i < lenght2; j++)
+		string[i + j] = s2[j];
+	string[result] = '\0';
 	return (string);
 }
