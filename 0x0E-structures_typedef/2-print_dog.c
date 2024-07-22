@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "dog.h"
 
-/** 
+/**
   * print_dog - print struct dog
   * @d: pointer to the structure
   * Return: void
