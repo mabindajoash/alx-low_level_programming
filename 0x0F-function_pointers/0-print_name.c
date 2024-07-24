@@ -4,7 +4,7 @@
 /**
   * print_name - prints a name
   * @name: name
-  * 2f: function pointer
+  * @f: function pointer
   * Return: void
   */
 void print_name(char *name, void (*f)(char *))
