@@ -4,16 +4,16 @@
 
 /**
   * print_numbers - print nos followed by a new line
-  * @seperator: string to be printed between numbers
+  * @separator: string to be printed between numbers
   * @n: number of integers passed to the function
   * Return: void
   */
-void print_numbers(const char *seperator, const unsigned int n, ...)
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list my_int;
 
-	if (seperator == NULL || n == 0)
+	if (n == 0)
 		return;
 	va_start(my_int, n);
 	for (i = 0; i < n; i++)
