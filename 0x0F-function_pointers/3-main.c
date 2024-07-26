@@ -33,8 +33,7 @@ int main(int argc, char *argv[])
 		exit (100);
 	}
 	operation = get_op_func(argv[2]);
-	if (operation == NULL)
-		return(0);
-	printf("%d \n", operation(a, b));
+	if (operation != NULL)
+		printf("%d \n", operation(a, b));
 	return (0);
 }
