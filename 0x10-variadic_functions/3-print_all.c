@@ -15,12 +15,12 @@ void print_all(const char * const format, ...)
 	va_list args;
 	unsigned int i = 0;
 	char *str, *separator = "";
-	
+
 	va_start(args, format);
 	while (format && format[i])
 	{
-        	if (format[i] == 'c' || format[i] == 'i' ||
-            		format[i] == 'f' || format[i] == 's')
+		if (format[i] == 'c' || format[i] == 'i' ||
+				format[i] == 'f' || format[i] == 's')
 		{
 			printf("%s", separator);
 			separator = ", ";
