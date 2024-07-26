@@ -1,18 +1,40 @@
 #include <stdio.h>
-#include "dog.h"
+#include "3-calc.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
-   * main - check the code
-    *
-     * Return: Always 0.
-      */
-int main(void)
+  * main - main entry point of the programme
+  * @argc: number of arguments
+  * @argv: string of arguments
+  * Return: operation on two numbers
+  */
+int main(int argc, char *argv[])
 {
-	    dog_t my_dog;
+	int (*operation)(int, int);
+	int a;
+	int b;
 
-	        my_dog.name = "Poppy";
-		    my_dog.age = 3.5;
-		        my_dog.owner = "Bob";
-			    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
-			        return (0);
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	if ((strcmp(argv[2], "+") != 0) && (strcmp(argv[2], "-") != 0) && (strcmp(argv[2], "%") != 0) && (strcmp(argv[2], "/") != 0) && (strcmp(argv[2], "*") != 0))
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	if ((strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0) && (b == 0))
+	{
+		printf("Error\n");
+		exit (100);
+	}
+	operation = get_op_func(argv[2]);
+	if (operation == NULL)
+		return(0);
+	printf("%d \n", operation(a, b));
+	return (0);
 }
