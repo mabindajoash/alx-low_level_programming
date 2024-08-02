@@ -3,7 +3,8 @@
   * my_first - print string before the main function executes
   * Return: void
   */
-void __attribute__((constructor)) function()
+void __attribute__((constructor)) my_first()
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n
+		I bore my house upon my back!\n");
 }
