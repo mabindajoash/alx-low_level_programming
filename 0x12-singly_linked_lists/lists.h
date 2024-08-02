@@ -5,16 +5,17 @@
 #include <stdlib.h>
 #include <string.h>
 /**
-  * struct lists - struct containing int, string and pointer data types
+  * struct list - struct containing int, string and pointer data types
   * @str: string
-  * @num: number
-  * @pt: pointer
+  * @len: number
+  * @next: pointer
   */
-typedef struct list{
+typedef struct list
+{
 	char *str;
 	int len;
 	struct list *next;
-}list_t;
+} list_t;
 
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
