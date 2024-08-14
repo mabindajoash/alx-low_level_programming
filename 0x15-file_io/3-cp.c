@@ -19,6 +19,8 @@ int main(int argc, char **argv)
 	}
 	file_from = argv[1];
 	file_to = argv[2];
+	if (argv[1] && argv[2] == NULL)
+		return (0);
 	/* open the files*/
 	fd = open(file_from, O_RDONLY);
 	if (fd == -1)
