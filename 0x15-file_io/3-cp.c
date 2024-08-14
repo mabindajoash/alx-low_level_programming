@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Cant't close %d", fd);
 		exit(100);
 	}
-	if (close(fd) == -1)
+	if (close(ft) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close %d", ft);
 		exit(100);
