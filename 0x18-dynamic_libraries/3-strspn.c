@@ -17,7 +17,7 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		match = 0;
 		char *a;
-		
+
 		for (a = accept; *a; ++a)
 		{
 			if (*s == *a)

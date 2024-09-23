@@ -4,7 +4,7 @@
 /**
  * _isupper - checks for uppercase characters
  * @c: character to be chacked
- * Return: 1 if successful, 0 otherwise 
+ * Return: 1 if successful, 0 otherwise
  */
 
 int _isupper(int c)
