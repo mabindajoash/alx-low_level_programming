@@ -4,11 +4,11 @@
   * @h: head of the list
   * @idx: index to be added
   * @n: data to be added
+  * Return: address of the new node
   */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *temp;
-	dlistint_t *temp1;
 	dlistint_t *new_node;
 	unsigned int count = 0;
 
@@ -17,9 +17,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	new_node->n = n;
 	new_node->next = NULL;
-	if (*h == NULL)
+	new_node->prev = NULL;
+	if (idx == 0)
 	{
+		new_node->next = *h;
+		if (*h != NULL)
+			(*h)->prev = new_node;
 		*h = new_node;
+		return (new_node);
 	}
 
 	temp = *h;
@@ -27,18 +32,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (count == idx - 1)
 		{
-			temp1 = temp;
-		}
-		if (count == idx)
-		{
-			new_node->prev = temp->prev;
-			new_node->next = temp;
-			temp->prev = new_node;
-			temp1 = new_node;
+			new_node->next = temp->next;
+			new_node->prev = temp;
+			if (temp->next != NULL)
+			{
+				temp->next->prev = new_node;
+			}
+			temp->next = new_node;
 			return (new_node);
 		}
 		count++;
 		temp = temp->next;
 	}
+	free(new_node);
 	return (NULL);
 }
